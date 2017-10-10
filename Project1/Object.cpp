@@ -29,6 +29,8 @@ using namespace std;
  }
 
  void Object::load(char* filename) {
+	 V.clear();
+	 F.clear();
 	 isBall = 0;
 	 char line[100];
 	 char mark[5];

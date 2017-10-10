@@ -16,8 +16,8 @@ HINSTANCE       hInstance;                            // Holds The Instance Of T
 bool    keys[256];                              // Array Used For The Keyboard Routine
 bool    active = TRUE;                                // Window Active Flag Set To TRUE By Default
 bool    fullscreen = TRUE;                            // Fullscreen Flag Set To Fullscreen Mode By Default
-static char* obj1 = "body.obj";
-static char* obj2 = "wolf.obj";
+static char* objName1 = "suzanne.obj";
+static char* objName2 = "body.obj";
 
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);               // Declaration For WndProc
@@ -520,12 +520,12 @@ int WINAPI WinMain(HINSTANCE   hInstance,              // Instance
 					SwapBuffers(hDC);
 				}
 				else if (keys[VK_UP]) {//change to a loaded object
-					obj->load(obj1);
+					obj->load(objName1);
 					DrawGLScene();
 					SwapBuffers(hDC);
 				}
 				else if (keys[VK_DOWN]) {//change to another loaded object
-					obj->load(obj2);
+					obj->load(objName2);
 					DrawGLScene();
 					SwapBuffers(hDC);
 				}
