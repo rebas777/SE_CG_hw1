@@ -81,13 +81,18 @@ using namespace std;
 	 else {
 		 glPushMatrix();
 		 glTranslatef(0, y, 0);
-		 glColor3d(1, 0, 0);
-		 glBegin(GL_LINES);
-		 for (int i = 0, num = F.size(); i<num; ++i) {
+		 glColor3d(0, 1, 0);
+		 glBegin(GL_TRIANGLES);
+		 /*for (int i = 0, num = F.size(); i<num; ++i) {
 			 for (int j = 0, n = F[i].size(); j<n; ++j) {
 				 glVertex3dv(V[F[i][j]].data());
 				 glVertex3dv(V[F[i][(j + 1) % n]].data());
 			 }
+		 }*/
+		 for (int i = 0, num = F.size(); i < num; i++) {
+			 glVertex3dv(V[F[i][0] ].data());
+			 glVertex3dv(V[F[i][1] ].data());
+			 glVertex3dv(V[F[i][2] ].data());
 		 }
 		 glEnd();
 		 glPopMatrix();
