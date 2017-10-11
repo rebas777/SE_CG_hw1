@@ -1,2 +1,4 @@
 # SE_CG_hw1
-a ball\njumping when left mouse button clicked\ncan be replaced by other .obj models(naive loader)
+#a ball
+#jumping when left mouse button clicked
+#can be replaced by other .obj models(naive loader)
