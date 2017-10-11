@@ -2,4 +2,4 @@
 a ball
 <br>jumping when left mouse button clicked
 <br>can be replaced by other .obj models(naive loader)
-##implemented via VS2015, openGL
+<br>implemented via VS2015, openGL
