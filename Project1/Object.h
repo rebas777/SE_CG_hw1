@@ -23,6 +23,7 @@ public:
 	void reset();
 	void jump();
 	void toBall();
+	void toObj();
 	int status();
 	Velocity velocity;
 	Pos pos;
@@ -31,5 +32,14 @@ public:
 private:
 	int isBall;
 	vector<Point> V;
+	vector<Point> N;
 	vector<vector<int> > F;
+
+	Vector3d Vector(Vector3d vPoint1, Vector3d vPoint2);
+	Vector3d AddVector(Vector3d vVector1, Vector3d vVector2);
+	Vector3d DivideVectorByScaler(Vector3d vVector1, float Scaler);
+	Vector3d Cross(Vector3d vVector1, Vector3d vVector2);
+	Vector3d Normalize(Vector3d vNormal);
+
+	void computeNormals();
 };

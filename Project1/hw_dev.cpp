@@ -1,7 +1,4 @@
-#include <windows.h>                            
-#include <gl\gl.h>                               
-#include <gl\glu.h>                             
-#include <gl\glaux.h>                          
+#include <windows.h>                                                                                                            
 #include<GL\glut.h>
 #include<math.h>
 #include<time.h>
@@ -16,8 +13,6 @@ HINSTANCE       hInstance;
 bool    keys[256];                            
 bool    active = TRUE;                                
 bool    fullscreen = TRUE;                           
-static char* objName1 = "suzanne.obj";
-static char* objName2 = "body.obj";
 
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);               
@@ -39,7 +34,7 @@ GLvoid ReSizeGLScene(GLsizei width, GLsizei height)
 	glLoadIdentity();                         
 }
 
-Object *obj = new Object();
+Object *obj;
 
 int InitGL(GLvoid)                           
 {
@@ -53,7 +48,9 @@ int InitGL(GLvoid)
 	glEnable(GL_DEPTH_TEST);                        
 	glDepthFunc(GL_LEQUAL);                       
 
-	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);        
+	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);     
+
+	obj = new Object();
 
 	return TRUE;                              
 }
@@ -494,15 +491,15 @@ int WINAPI WinMain(HINSTANCE   hInstance,
 					SwapBuffers(hDC);
 				}
 				else if (keys[VK_UP]) {//change to a loaded object
-					obj->load(objName1);
+					obj->toObj();
 					DrawGLScene();
 					SwapBuffers(hDC);
 				}
-				else if (keys[VK_DOWN]) {//change to another loaded object
-					obj->load(objName2);
-					DrawGLScene();
-					SwapBuffers(hDC);
-				}
+				//else if (keys[VK_DOWN]) {//change to another loaded object
+				//	obj->load(objName2);
+				//	DrawGLScene();
+				//	SwapBuffers(hDC);
+				//}
 				else if (keys[VK_LEFT]) {//change back to the ball
 					obj->toBall();
 					DrawGLScene();
